@@ -3,10 +3,11 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 56;
+	objectVersion = 60;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CF03193D2C2975F4006628E6 /* Networking in Frameworks */ = {isa = PBXBuildFile; productRef = CF03193C2C2975F4006628E6 /* Networking */; };
 		CF14F9972C29714000B4B34D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF14F9962C29714000B4B34D /* AppDelegate.swift */; };
 		CF14F9992C29714000B4B34D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF14F9982C29714000B4B34D /* SceneDelegate.swift */; };
 		CF14F99B2C29714000B4B34D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF14F99A2C29714000B4B34D /* ViewController.swift */; };
@@ -16,6 +17,8 @@
 		CF14F9AE2C29714100B4B34D /* UniversitesAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF14F9AD2C29714100B4B34D /* UniversitesAppTests.swift */; };
 		CF14F9B82C29714100B4B34D /* UniversitesAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF14F9B72C29714100B4B34D /* UniversitesAppUITests.swift */; };
 		CF14F9BA2C29714100B4B34D /* UniversitesAppUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF14F9B92C29714100B4B34D /* UniversitesAppUITestsLaunchTests.swift */; };
+		CF14F9C82C29747600B4B34D /* Networking in Frameworks */ = {isa = PBXBuildFile; productRef = CF14F9C72C29747600B4B34D /* Networking */; };
+		CF14F9CE2C29758E00B4B34D /* Networking in Frameworks */ = {isa = PBXBuildFile; productRef = CF14F9CD2C29758E00B4B34D /* Networking */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -56,6 +59,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CF14F9CE2C29758E00B4B34D /* Networking in Frameworks */,
+				CF14F9C82C29747600B4B34D /* Networking in Frameworks */,
+				CF03193D2C2975F4006628E6 /* Networking in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -143,6 +149,11 @@
 			dependencies = (
 			);
 			name = UniversitesApp;
+			packageProductDependencies = (
+				CF14F9C72C29747600B4B34D /* Networking */,
+				CF14F9CD2C29758E00B4B34D /* Networking */,
+				CF03193C2C2975F4006628E6 /* Networking */,
+			);
 			productName = UniversitesApp;
 			productReference = CF14F9932C29714000B4B34D /* UniversitesApp.app */;
 			productType = "com.apple.product-type.application";
@@ -215,6 +226,9 @@
 				Base,
 			);
 			mainGroup = CF14F98A2C29714000B4B34D;
+			packageReferences = (
+				CF03193B2C2975F4006628E6 /* XCLocalSwiftPackageReference "Networking" */,
+			);
 			productRefGroup = CF14F9942C29714000B4B34D /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -607,6 +621,28 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCLocalSwiftPackageReference section */
+		CF03193B2C2975F4006628E6 /* XCLocalSwiftPackageReference "Networking" */ = {
+			isa = XCLocalSwiftPackageReference;
+			relativePath = Networking;
+		};
+/* End XCLocalSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		CF03193C2C2975F4006628E6 /* Networking */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = Networking;
+		};
+		CF14F9C72C29747600B4B34D /* Networking */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = Networking;
+		};
+		CF14F9CD2C29758E00B4B34D /* Networking */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = Networking;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = CF14F98B2C29714000B4B34D /* Project object */;
 }
