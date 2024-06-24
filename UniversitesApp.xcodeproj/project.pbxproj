@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 60;
+	objectVersion = 56;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -19,7 +19,6 @@
 		CF14F9BA2C29714100B4B34D /* UniversitesAppUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF14F9B92C29714100B4B34D /* UniversitesAppUITestsLaunchTests.swift */; };
 		CF14F9C82C29747600B4B34D /* Networking in Frameworks */ = {isa = PBXBuildFile; productRef = CF14F9C72C29747600B4B34D /* Networking */; };
 		CF14F9CE2C29758E00B4B34D /* Networking in Frameworks */ = {isa = PBXBuildFile; productRef = CF14F9CD2C29758E00B4B34D /* Networking */; };
-		CFBA69D22C299B450048773A /* LocalCaching in Frameworks */ = {isa = PBXBuildFile; productRef = CFBA69D12C299B450048773A /* LocalCaching */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +52,9 @@
 		CF14F9B32C29714100B4B34D /* UniversitesAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = UniversitesAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		CF14F9B72C29714100B4B34D /* UniversitesAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UniversitesAppUITests.swift; sourceTree = "<group>"; };
 		CF14F9B92C29714100B4B34D /* UniversitesAppUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UniversitesAppUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		CF305E1C2C299C8F00F96847 /* Networking */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = Networking; sourceTree = "<group>"; };
+		CF305E1D2C299C9400F96847 /* LocalCaching */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = LocalCaching; sourceTree = "<group>"; };
+		CF305E1E2C29A4D300F96847 /* Models */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = Models; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,7 +62,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CFBA69D22C299B450048773A /* LocalCaching in Frameworks */,
 				CF14F9CE2C29758E00B4B34D /* Networking in Frameworks */,
 				CF14F9C82C29747600B4B34D /* Networking in Frameworks */,
 				CF03193D2C2975F4006628E6 /* Networking in Frameworks */,
@@ -107,6 +108,7 @@
 		CF14F9952C29714000B4B34D /* UniversitesApp */ = {
 			isa = PBXGroup;
 			children = (
+				CF305E1B2C299C4000F96847 /* Modules */,
 				CF14F9962C29714000B4B34D /* AppDelegate.swift */,
 				CF14F9982C29714000B4B34D /* SceneDelegate.swift */,
 				CF14F99A2C29714000B4B34D /* ViewController.swift */,
@@ -135,6 +137,16 @@
 			path = UniversitesAppUITests;
 			sourceTree = "<group>";
 		};
+		CF305E1B2C299C4000F96847 /* Modules */ = {
+			isa = PBXGroup;
+			children = (
+				CF305E1E2C29A4D300F96847 /* Models */,
+				CF305E1D2C299C9400F96847 /* LocalCaching */,
+				CF305E1C2C299C8F00F96847 /* Networking */,
+			);
+			path = Modules;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -155,7 +167,6 @@
 				CF14F9C72C29747600B4B34D /* Networking */,
 				CF14F9CD2C29758E00B4B34D /* Networking */,
 				CF03193C2C2975F4006628E6 /* Networking */,
-				CFBA69D12C299B450048773A /* LocalCaching */,
 			);
 			productName = UniversitesApp;
 			productReference = CF14F9932C29714000B4B34D /* UniversitesApp.app */;
@@ -230,8 +241,6 @@
 			);
 			mainGroup = CF14F98A2C29714000B4B34D;
 			packageReferences = (
-				CF03193B2C2975F4006628E6 /* XCLocalSwiftPackageReference "Networking" */,
-				CFBA69D02C299B450048773A /* XCLocalSwiftPackageReference "LocalCaching" */,
 			);
 			productRefGroup = CF14F9942C29714000B4B34D /* Products */;
 			projectDirPath = "";
@@ -626,17 +635,6 @@
 		};
 /* End XCConfigurationList section */
 
-/* Begin XCLocalSwiftPackageReference section */
-		CF03193B2C2975F4006628E6 /* XCLocalSwiftPackageReference "Networking" */ = {
-			isa = XCLocalSwiftPackageReference;
-			relativePath = Networking;
-		};
-		CFBA69D02C299B450048773A /* XCLocalSwiftPackageReference "LocalCaching" */ = {
-			isa = XCLocalSwiftPackageReference;
-			relativePath = LocalCaching;
-		};
-/* End XCLocalSwiftPackageReference section */
-
 /* Begin XCSwiftPackageProductDependency section */
 		CF03193C2C2975F4006628E6 /* Networking */ = {
 			isa = XCSwiftPackageProductDependency;
@@ -649,10 +647,6 @@
 		CF14F9CD2C29758E00B4B34D /* Networking */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = Networking;
-		};
-		CFBA69D12C299B450048773A /* LocalCaching */ = {
-			isa = XCSwiftPackageProductDependency;
-			productName = LocalCaching;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
