@@ -19,6 +19,7 @@
 		CF14F9BA2C29714100B4B34D /* UniversitesAppUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF14F9B92C29714100B4B34D /* UniversitesAppUITestsLaunchTests.swift */; };
 		CF14F9C82C29747600B4B34D /* Networking in Frameworks */ = {isa = PBXBuildFile; productRef = CF14F9C72C29747600B4B34D /* Networking */; };
 		CF14F9CE2C29758E00B4B34D /* Networking in Frameworks */ = {isa = PBXBuildFile; productRef = CF14F9CD2C29758E00B4B34D /* Networking */; };
+		CFBA69D22C299B450048773A /* LocalCaching in Frameworks */ = {isa = PBXBuildFile; productRef = CFBA69D12C299B450048773A /* LocalCaching */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -59,6 +60,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CFBA69D22C299B450048773A /* LocalCaching in Frameworks */,
 				CF14F9CE2C29758E00B4B34D /* Networking in Frameworks */,
 				CF14F9C82C29747600B4B34D /* Networking in Frameworks */,
 				CF03193D2C2975F4006628E6 /* Networking in Frameworks */,
@@ -153,6 +155,7 @@
 				CF14F9C72C29747600B4B34D /* Networking */,
 				CF14F9CD2C29758E00B4B34D /* Networking */,
 				CF03193C2C2975F4006628E6 /* Networking */,
+				CFBA69D12C299B450048773A /* LocalCaching */,
 			);
 			productName = UniversitesApp;
 			productReference = CF14F9932C29714000B4B34D /* UniversitesApp.app */;
@@ -228,6 +231,7 @@
 			mainGroup = CF14F98A2C29714000B4B34D;
 			packageReferences = (
 				CF03193B2C2975F4006628E6 /* XCLocalSwiftPackageReference "Networking" */,
+				CFBA69D02C299B450048773A /* XCLocalSwiftPackageReference "LocalCaching" */,
 			);
 			productRefGroup = CF14F9942C29714000B4B34D /* Products */;
 			projectDirPath = "";
@@ -627,6 +631,10 @@
 			isa = XCLocalSwiftPackageReference;
 			relativePath = Networking;
 		};
+		CFBA69D02C299B450048773A /* XCLocalSwiftPackageReference "LocalCaching" */ = {
+			isa = XCLocalSwiftPackageReference;
+			relativePath = LocalCaching;
+		};
 /* End XCLocalSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -641,6 +649,10 @@
 		CF14F9CD2C29758E00B4B34D /* Networking */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = Networking;
+		};
+		CFBA69D12C299B450048773A /* LocalCaching */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = LocalCaching;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
