@@ -6,6 +6,8 @@
 //
 
 import Foundation
+import LocalCaching
+import RealmSwift
 
 public struct University: Codable {
     public let name: String
@@ -22,5 +24,17 @@ public struct University: Codable {
         self.name = name
         self.country = country
         self.webPages = webPages
+    }
+}
+
+extension University: Cacheable {
+    public var realmObject: RealmUniversity {
+        return RealmUniversity(name: name, country: country, webPages: webPages)
+    }
+    
+    public init(realmObject: RealmUniversity) {
+        self.name = realmObject.name
+        self.country = realmObject.country
+        self.webPages = Array(realmObject.webPages)
     }
 }
