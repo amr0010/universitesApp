@@ -8,33 +8,70 @@
 import Foundation
 import RealmSwift
 
-public class CacheManager<T: Cacheable> {
-    private let realm: Realm
+public class CacheManager: CacheManagerProtocol {
+    private let queue: DispatchQueue = DispatchQueue(label: "com.cachemanager.realm")
 
-    public init() throws {
-        do {
-            self.realm = try Realm()
-        } catch {
-            throw CacheManagerError.initializationFailed("Failed to initialize Realm: \(error.localizedDescription)")
-        }
-    }
-    
-    public func cache(_ items: [T]) throws {
-        do {
-            try realm.write {
-                realm.add(items.map { $0.realmObject }, update: .modified)
+    public init() {
+        queue.async {
+            do {
+                _ = try Realm()
+            } catch let error as NSError {
+                fatalError("Failed to initialize Realm: \(error.localizedDescription)")
             }
-        } catch {
-            throw CacheManagerError.writeFailed("Failed to write items to Realm: \(error.localizedDescription)")
         }
     }
-    
-    public func fetch() throws -> [T] {
-        do {
-            let realmObjects = realm.objects(T.RealmType.self)
-            return realmObjects.map { T(realmObject: $0) }
-        } catch {
-            throw CacheManagerError.fetchFailed("Failed to fetch items from Realm: \(error.localizedDescription)")
+
+    public func add<T: Object>(_ object: T) throws {
+        try queue.sync {
+            do {
+                let realm = try Realm()
+                try realm.write {
+                    if let primaryKey = T.primaryKey() {
+                        if realm.object(ofType: T.self, forPrimaryKey: object.value(forKey: primaryKey)!) != nil {
+                            realm.add(object, update: .modified)
+                        } else {
+                            realm.add(object)
+                        }
+                    } else {
+                        realm.add(object)
+                    }
+                }
+            } catch {
+                debugPrint("Failed to add or update object: \(error.localizedDescription)")
+                throw CacheManagerError.writeFailed("Failed to write items to Realm: \(error.localizedDescription)")
+            }
+        }
+    }
+
+    public func get<T: Object>(_ type: T.Type) throws -> Results<T> {
+        return try queue.sync {
+            let realm = try Realm()
+            return realm.objects(type)
+        }
+    }
+
+    public func getAll<T: Object>(_ type: T.Type) throws -> [T] {
+        return try queue.sync {
+            let realm = try Realm()
+            return Array(realm.objects(type))
+        }
+    }
+
+    public func delete<T: Object>(_ object: T) throws {
+       try queue.sync {
+            do {
+                let realm = try Realm()
+                try realm.write {
+                    if let primaryKey = T.primaryKey(), let existingObject = realm.object(ofType: T.self, forPrimaryKey: object.value(forKey: primaryKey)!) {
+                        realm.delete(existingObject)
+                    } else {
+                        realm.delete(object)
+                    }
+                }
+            } catch let error as NSError {
+                debugPrint("Failed to delete object: \(error.localizedDescription)")
+                throw error
+            }
         }
     }
 }

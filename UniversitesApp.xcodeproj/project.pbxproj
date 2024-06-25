@@ -19,6 +19,9 @@
 		CF14F9BA2C29714100B4B34D /* UniversitesAppUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF14F9B92C29714100B4B34D /* UniversitesAppUITestsLaunchTests.swift */; };
 		CF14F9C82C29747600B4B34D /* Networking in Frameworks */ = {isa = PBXBuildFile; productRef = CF14F9C72C29747600B4B34D /* Networking */; };
 		CF14F9CE2C29758E00B4B34D /* Networking in Frameworks */ = {isa = PBXBuildFile; productRef = CF14F9CD2C29758E00B4B34D /* Networking */; };
+		CF34800E2C2A14A100D4E9EC /* LocalCaching in Frameworks */ = {isa = PBXBuildFile; productRef = CF34800D2C2A14A100D4E9EC /* LocalCaching */; };
+		CF3480102C2A14A500D4E9EC /* UniversitiesList in Frameworks */ = {isa = PBXBuildFile; productRef = CF34800F2C2A14A500D4E9EC /* UniversitiesList */; };
+		CF3480122C2A14AB00D4E9EC /* Models in Frameworks */ = {isa = PBXBuildFile; productRef = CF3480112C2A14AB00D4E9EC /* Models */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,6 +58,7 @@
 		CF305E1C2C299C8F00F96847 /* Networking */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = Networking; sourceTree = "<group>"; };
 		CF305E1D2C299C9400F96847 /* LocalCaching */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = LocalCaching; sourceTree = "<group>"; };
 		CF305E1E2C29A4D300F96847 /* Models */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = Models; sourceTree = "<group>"; };
+		CF34800B2C2A13ED00D4E9EC /* UniversitiesList */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = UniversitiesList; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,8 +66,11 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CF3480122C2A14AB00D4E9EC /* Models in Frameworks */,
+				CF34800E2C2A14A100D4E9EC /* LocalCaching in Frameworks */,
 				CF14F9CE2C29758E00B4B34D /* Networking in Frameworks */,
 				CF14F9C82C29747600B4B34D /* Networking in Frameworks */,
+				CF3480102C2A14A500D4E9EC /* UniversitiesList in Frameworks */,
 				CF03193D2C2975F4006628E6 /* Networking in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -92,6 +99,7 @@
 				CF14F9AC2C29714100B4B34D /* UniversitesAppTests */,
 				CF14F9B62C29714100B4B34D /* UniversitesAppUITests */,
 				CF14F9942C29714000B4B34D /* Products */,
+				CF34800C2C2A149D00D4E9EC /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -140,11 +148,19 @@
 		CF305E1B2C299C4000F96847 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				CF34800B2C2A13ED00D4E9EC /* UniversitiesList */,
 				CF305E1E2C29A4D300F96847 /* Models */,
 				CF305E1D2C299C9400F96847 /* LocalCaching */,
 				CF305E1C2C299C8F00F96847 /* Networking */,
 			);
 			path = Modules;
+			sourceTree = "<group>";
+		};
+		CF34800C2C2A149D00D4E9EC /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -167,6 +183,9 @@
 				CF14F9C72C29747600B4B34D /* Networking */,
 				CF14F9CD2C29758E00B4B34D /* Networking */,
 				CF03193C2C2975F4006628E6 /* Networking */,
+				CF34800D2C2A14A100D4E9EC /* LocalCaching */,
+				CF34800F2C2A14A500D4E9EC /* UniversitiesList */,
+				CF3480112C2A14AB00D4E9EC /* Models */,
 			);
 			productName = UniversitesApp;
 			productReference = CF14F9932C29714000B4B34D /* UniversitesApp.app */;
@@ -647,6 +666,18 @@
 		CF14F9CD2C29758E00B4B34D /* Networking */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = Networking;
+		};
+		CF34800D2C2A14A100D4E9EC /* LocalCaching */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = LocalCaching;
+		};
+		CF34800F2C2A14A500D4E9EC /* UniversitiesList */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = UniversitiesList;
+		};
+		CF3480112C2A14AB00D4E9EC /* Models */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = Models;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

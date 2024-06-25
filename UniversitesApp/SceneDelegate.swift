@@ -6,6 +6,10 @@
 //
 
 import UIKit
+import UniversitiesList
+import Networking
+import LocalCaching
+import Models
 
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
@@ -13,11 +17,29 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
 
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
-        // Use this method to optionally configure and attach the UIWindow `window` to the provided UIWindowScene `scene`.
-        // If using a storyboard, the `window` property will automatically be initialized and attached to the scene.
-        // This delegate does not imply the connecting scene or session are new (see `application:configurationForConnectingSceneSession` instead).
-        guard let _ = (scene as? UIWindowScene) else { return }
+        guard let windowScene = (scene as? UIWindowScene) else { return }
+
+               let window = UIWindow(windowScene: windowScene)
+               let viewController = createUniversitiesListModule(country: "United Arab Emirates")
+               window.rootViewController = UINavigationController(rootViewController: viewController)
+               self.window = window
+               window.makeKeyAndVisible()
     }
+    
+    private func createUniversitiesListModule(country: String) -> UIViewController {
+        let view = UniversitiesListView()
+                let presenter: UniversitiesListPresenterProtocol & UniversitiesListInteractorOutputProtocol = UniversitiesListPresenter()
+        let cacheManager: CacheManagerProtocol = CacheManager()
+        let interactor: UniversitiesListInteractorInputProtocol = UniversitiesListInteractor(country: country, cacheManager: cacheManager, networkService: NetworkService(), presenter: presenter)
+                let router: UniversitiesListRouterProtocol = UniversitiesListRouter()
+
+                view.presenter = presenter
+                presenter.view = view
+                presenter.interactor = interactor
+                presenter.router = router
+
+                return view
+     }
 
     func sceneDidDisconnect(_ scene: UIScene) {
         // Called as the scene is being released by the system.
