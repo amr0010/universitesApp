@@ -21,6 +21,7 @@
 		CF34800E2C2A14A100D4E9EC /* LocalCaching in Frameworks */ = {isa = PBXBuildFile; productRef = CF34800D2C2A14A100D4E9EC /* LocalCaching */; };
 		CF3480102C2A14A500D4E9EC /* UniversitiesList in Frameworks */ = {isa = PBXBuildFile; productRef = CF34800F2C2A14A500D4E9EC /* UniversitiesList */; };
 		CF3480122C2A14AB00D4E9EC /* Models in Frameworks */ = {isa = PBXBuildFile; productRef = CF3480112C2A14AB00D4E9EC /* Models */; };
+		CF699B9E2C2ACB8600F4F96D /* DIContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF699B9D2C2ACB8600F4F96D /* DIContainer.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -58,6 +59,7 @@
 		CF305E1E2C29A4D300F96847 /* Models */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = Models; sourceTree = "<group>"; };
 		CF34800B2C2A13ED00D4E9EC /* UniversitiesList */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = UniversitiesList; sourceTree = "<group>"; };
 		CF3480192C2AB63A00D4E9EC /* UniversityDetails */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = UniversityDetails; sourceTree = "<group>"; };
+		CF699B9D2C2ACB8600F4F96D /* DIContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DIContainer.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -115,6 +117,7 @@
 		CF14F9952C29714000B4B34D /* UniversitesApp */ = {
 			isa = PBXGroup;
 			children = (
+				CF699B9C2C2ACB7600F4F96D /* DependencyInjection */,
 				CF34801A2C2ABBEF00D4E9EC /* Delegate */,
 				CF305E1B2C299C4000F96847 /* Modules */,
 				CF14F99C2C29714000B4B34D /* Main.storyboard */,
@@ -168,6 +171,14 @@
 				CF14F9982C29714000B4B34D /* SceneDelegate.swift */,
 			);
 			path = Delegate;
+			sourceTree = "<group>";
+		};
+		CF699B9C2C2ACB7600F4F96D /* DependencyInjection */ = {
+			isa = PBXGroup;
+			children = (
+				CF699B9D2C2ACB8600F4F96D /* DIContainer.swift */,
+			);
+			path = DependencyInjection;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -312,6 +323,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CF14F9972C29714000B4B34D /* AppDelegate.swift in Sources */,
+				CF699B9E2C2ACB8600F4F96D /* DIContainer.swift in Sources */,
 				CF14F9992C29714000B4B34D /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

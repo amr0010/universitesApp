@@ -21,7 +21,7 @@ class UniversitiesListInteractorTests: XCTestCase {
         mockCacheManager = MockCacheManager()
         mockNetworkService = MockNetworkService()
         mockPresenter = MockPresenter()
-        interactor = UniversitiesListInteractor(country: "United Arab Emirates", cacheManager: mockCacheManager, networkService: mockNetworkService, presenter: mockPresenter)
+        interactor = UniversitiesListInteractor(country: "United Arab Emirates", cacheManager: mockCacheManager, networkService: mockNetworkService)
         interactor.presenter = mockPresenter
     }
 

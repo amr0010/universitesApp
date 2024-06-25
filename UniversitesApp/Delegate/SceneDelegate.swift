@@ -28,10 +28,9 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     
     private func createUniversitiesListModule(country: String) -> UIViewController {
         let view = UniversitiesListView()
-                let presenter: UniversitiesListPresenterProtocol & UniversitiesListInteractorOutputProtocol = UniversitiesListPresenter()
-        let cacheManager: CacheManagerProtocol = CacheManager()
-        let interactor: UniversitiesListInteractorInputProtocol = UniversitiesListInteractor(country: country, cacheManager: cacheManager, networkService: NetworkService())
-                let router: UniversitiesListRouterProtocol = UniversitiesListRouter()
+        let presenter = DIContainer.shared.makeUniversitiesListPresenter()
+        let interactor = DIContainer.shared.makeUniversitiesListInteractor()
+        let router = DIContainer.shared.makeUniversitiesListRouter()
         
         view.presenter = presenter
         presenter.view = view
@@ -40,7 +39,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         interactor.presenter = presenter
         
         return view
-     }
+    }
 
   
 

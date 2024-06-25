@@ -7,6 +7,7 @@
 
 import Foundation
 import Models
+import UniversityDetails
 
 class MockPresenter: UniversityDetailsInteractorOutputProtocol {
     var details: University?
