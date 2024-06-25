@@ -11,6 +11,7 @@ import Models
 import LocalCaching
 
 public protocol UniversitiesListInteractorInputProtocol: AnyObject {
+    var presenter: UniversitiesListInteractorOutputProtocol? { get set }
     func fetchUniversities()
     func refreshUniversities()
 }
@@ -21,16 +22,15 @@ public protocol UniversitiesListInteractorOutputProtocol: AnyObject {
 }
 
 public class UniversitiesListInteractor: UniversitiesListInteractorInputProtocol {
-    weak var presenter: UniversitiesListInteractorOutputProtocol?
+    weak public var presenter: UniversitiesListInteractorOutputProtocol?
     private let cacheManager: CacheManagerProtocol
     private let networkService: Networkable
     private let country: String
     
-    public init(country: String, cacheManager: CacheManagerProtocol, networkService: Networkable, presenter: UniversitiesListInteractorOutputProtocol) {
+    public init(country: String, cacheManager: CacheManagerProtocol, networkService: Networkable) {
         self.country = country
         self.cacheManager = cacheManager
         self.networkService = networkService
-        self.presenter = presenter
     }
     
     public func fetchUniversities() {
