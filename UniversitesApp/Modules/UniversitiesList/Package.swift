@@ -15,7 +15,9 @@ let package = Package(
     dependencies: [
         .package(path: "../Networking"),
         .package(path: "../Models"),
-        .package(path: "../LocalCaching")
+        .package(path: "../LocalCaching"),
+        .package(path: "../UniversityDetails")
+
     ],
     targets: [
         .target(
@@ -23,7 +25,8 @@ let package = Package(
             dependencies: [
                 "Networking",
                 "Models",
-                "LocalCaching"
+                "LocalCaching",
+                "UniversityDetails"
             ]),
         .testTarget(
             name: "UniversitiesListTests",
